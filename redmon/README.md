@@ -1,8 +1,6 @@
 # Redmon
 
-Docker image for the Redis web UI [Redmon](https://github.com/steelThread/redmon).
-This image has the entry point set to `redmon`.  Just run it with your desired
-parameters.  
+Docker image for the Redis web UI [Redmon](https://github.com/steelThread/redmon). This image has the entry point set to `redmon`.  Just run it with your desired parameters.  
 
 ```
 redmon $ docker run --rm -it redmon:latest --help

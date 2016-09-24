@@ -10,7 +10,7 @@ RUN apt-get update -qq && \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install redmon dependencies
-RUN gem install mixlib-cli eventmachine redis
+RUN gem install mixlib-cli eventmachine redis thin
 
 # Install redmon from RubyGems
 RUN gem install redmon
