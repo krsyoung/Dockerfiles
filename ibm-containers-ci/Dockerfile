@@ -19,7 +19,7 @@ RUN apt-get update && \
   apt-get install -y docker-engine
 
 # start Docker Engine
-RUN service docker start
+# RUN service docker start
 
 # install docker-compose
 # https://github.com/docker/compose/releases
