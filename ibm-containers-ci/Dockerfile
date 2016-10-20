@@ -28,7 +28,7 @@ chmod +x /usr/local/bin/docker-compose
 
 # install docker-machine
 # https://github.com/docker/machine/releases/
-RUN curl -L https://github.com/docker/machine/releases/download/v0.8.1/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine && \
+RUN curl -L https://github.com/docker/machine/releases/download/v0.8.2/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine && \
 chmod +x /usr/local/bin/docker-machine
 
 # install cloud foundry CLI
