@@ -40,5 +40,9 @@ dpkg -i /tmp/cf-cli.deb && apt-get install -f
 # https://console.ng.bluemix.net/docs/containers/container_cli_cfic.html
 RUN cf install-plugin -f https://static-ice.ng.bluemix.net/ibm-containers-linux_x64
 
+# install OpenWhisk CLI
+RUN curl -Lo /usr/local/bin/wsk 'https://openwhisk.ng.bluemix.net/cli/go/download/linux/amd64/wsk' && \
+chmod +x /usr/local/bin/wsk 
+
 # bash it up
 CMD ["bash"]
