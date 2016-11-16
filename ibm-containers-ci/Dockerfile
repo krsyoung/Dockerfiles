@@ -33,7 +33,7 @@ chmod +x /usr/local/bin/docker-machine
 
 # install cloud foundry CLI
 # https://github.com/cloudfoundry/cli#downloads
-RUN curl -Lo /tmp/cf-cli.deb 'https://cli.run.pivotal.io/stable?release=debian64&version=6.22.1&source=github-rel' && \
+RUN curl -Lo /tmp/cf-cli.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github' && \
 dpkg -i /tmp/cf-cli.deb && apt-get install -f
 
 # install IBM Containers CF plugin
@@ -42,7 +42,7 @@ RUN cf install-plugin -f https://static-ice.ng.bluemix.net/ibm-containers-linux_
 
 # install OpenWhisk CLI
 RUN curl -Lo /usr/local/bin/wsk 'https://openwhisk.ng.bluemix.net/cli/go/download/linux/amd64/wsk' && \
-chmod +x /usr/local/bin/wsk 
+chmod +x /usr/local/bin/wsk
 
 # bash it up
 CMD ["bash"]
