@@ -3,6 +3,7 @@ MAINTAINER Christopher Young "krsyoung@gmail.com"
 
 # update / install packages
 RUN apt-get update && \
+  apt-get upgrade -y && \
   apt-get install -y apt-transport-https ca-certificates curl git jq && \
   apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && \
   apt-get clean && \
@@ -18,18 +19,17 @@ RUN apt-get update && \
   # apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual && \
   apt-get install -y docker-engine
 
-# start Docker Engine
-# RUN service docker start
-
 # install docker-compose
 # https://github.com/docker/compose/releases
-RUN curl -L https://github.com/docker/compose/releases/download/1.8.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && \
+# previous: 1.8.2
+RUN curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && \
 chmod +x /usr/local/bin/docker-compose
 
 # install docker-machine
 # https://github.com/docker/machine/releases/
-RUN curl -L https://github.com/docker/machine/releases/download/v0.8.2/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine && \
-chmod +x /usr/local/bin/docker-machine
+# previous: v0.8.2
+RUN curl -L https://github.com/docker/machine/releases/download/v0.9.0-rc2/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine && \
+  chmod +x /usr/local/bin/docker-machine
 
 # install cloud foundry CLI
 # https://github.com/cloudfoundry/cli#downloads
